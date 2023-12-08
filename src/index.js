@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react"
+import * as  ReactDOMClient from "react-dom/client"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement = ReactDOMClient.createRoot(document.querySelector("#root"));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const arr = ["Ernest", "Arzi", "Elvira", "Remzi", "Refat"]
+
+function btnEvent() {
+    alert("hi")
+}
+let someLayout = (
+    <>
+        <h1>Refat</h1>
+        <p className="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, aliquid? Tempora architecto accusantium optio et tempore earum ea illo quidem atque officiis aspernatur placeat hic, impedit modi quis vel voluptate!</p>
+        <img src="img/boys.jfif" alt="boys" />
+        {Boolean(arr.length) &&
+            <>
+                <h2>Family:</h2>
+                <ol>
+                    {arr.map((item, index) => <li key={index}>{item}</li>)}
+                </ol>
+                <button style={{ all: "unset", padding: "10px", borderRadius: "10px", background: "royalblue", cursor: "pointer" }} onClick={btnEvent}>Press me</button>
+            </>
+        }
+
+    </>
+)
+
+rootElement.render(someLayout);
