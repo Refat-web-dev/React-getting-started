@@ -2,6 +2,7 @@ import React from "react"
 import Header from "./components/Header"
 import Image from "./components/Image"
 import boys from "./img/boys.jfif"
+import Button from "./components/Button"
 
 
 class SomeLayout extends React.Component {
@@ -43,7 +44,7 @@ class SomeLayout extends React.Component {
                     <button style={{ all: "unset", padding: "10px", borderRadius: "10px", background: "royalblue", cursor: "pointer" }} onClick={this.btnEvent}>Press me to add elements in arr</button>
                 </>
             }
-
+            <Button/>
         </>)
     }
 
